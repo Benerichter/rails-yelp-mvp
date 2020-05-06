@@ -1,0 +1,6 @@
+<h1>Restaurants</h1>
+<ul class="list-group list-group-flush">
+  <% @restaurants.each do |e| %>
+    <li class="list-group-item font-weight-bold"><%= link_to "#{e.name}", restaurant_path(e.id) %></li>
+  <% end %>
+</ul>

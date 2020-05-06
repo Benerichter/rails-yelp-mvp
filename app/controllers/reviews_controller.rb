@@ -5,12 +5,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.new(review_params)
-    review.restaurant = @restaurant
-    if review.save
+    @review = Review.new(review_params)
+    @review.restaurant = @restaurant
+    if @review.save
       redirect_to restaurant_path(@restaurant)
     else
-      redirect_to new_restaurant_review_path(@restaurant)
+      render :new
     end
   end
 
